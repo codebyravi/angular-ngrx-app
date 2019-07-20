@@ -15,4 +15,8 @@ export class AppComponent {
   onAdd(car: Car): void {
     this.cars.push(car);
   }
+
+  onDelete(id: number): void {
+    this.cars = this.cars.filter((el: Car) => el.id !== id);
+  }
 }

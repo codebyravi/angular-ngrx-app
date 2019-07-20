@@ -1,10 +1,10 @@
 <div class="list-group-item list-group-item-action mb-4 border" [ngClass]="{'border-danger': car.isSold}">
   <div class="d-flex w-100 justify-content-between">
-    <h5 class="mb-1">{{ car.name }}</h5>
+    <h5 class="mb-1 text-capitalize">{{ car.name }}</h5>
     <small>{{ car.date }}</small>
   </div>
-  <p class="mb-1">{{ car.model }}</p>
+  <p class="mb-1 text-capitalize">{{ car.model }}</p>
   <hr>
-  <button type="button" class="btn btn-sm btn-danger mr-2 text-capitalize">delete car</button>
-  <button type="button" class="btn btn-sm btn-success text-capitalize" [disabled]="car.isSold">buy car</button>
+  <button (click)="onDelete()" type="button" class="btn btn-sm btn-danger mr-2 text-capitalize">delete car</button>
+  <button (click)="onBuy()" type="button" class="btn btn-sm btn-success text-capitalize" [disabled]="car.isSold">buy car</button>
 </div>
