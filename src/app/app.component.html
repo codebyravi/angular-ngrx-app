@@ -3,7 +3,7 @@
     <div class="col">
       <nx-car-form></nx-car-form>
       <div class="list-group">
-        <nx-car (deleteCar)="onDelete($event)" [car]="car" *ngFor="let car of (carState | async).cars"></nx-car>
+        <nx-car [car]="car" *ngFor="let car of (carState | async).cars"></nx-car>
       </div>
     </div>
   </div>

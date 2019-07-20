@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {Car, Cars} from './models/car.model';
+import { Cars } from './models/car.model';
 import { AppState } from './store/state/app.state';
 import { Store } from '@ngrx/store';
-import {Observable} from 'rxjs';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'nx-root',
@@ -17,13 +17,5 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.carState = this.store.select('carPage');
-  }
-
-  onAdd(car: Car): void {
-    // this.cars.push(car);
-  }
-
-  onDelete(id: number): void {
-    // this.cars = this.cars.filter((el: Car) => el.id !== id);
   }
 }
