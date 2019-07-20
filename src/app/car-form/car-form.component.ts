@@ -5,6 +5,7 @@ import { Car } from '../models/car.model';
 import {Store} from '@ngrx/store';
 import {AppState} from '../store/state/app.state';
 import {AddCar, LoadCars} from '../store/actions/car.actions';
+import {CarService} from '../services/car.service';
 
 @Component({
   selector: 'nx-car-form',
@@ -16,7 +17,11 @@ export class CarFormComponent implements OnInit {
   form: FormGroup;
   id = 2;
 
-  constructor( private fb: FormBuilder, private store: Store<AppState>) { }
+  constructor(
+    private fb: FormBuilder,
+    private store: Store<AppState>,
+    private carService: CarService
+  ) { }
 
   ngOnInit(): void {
     this.form = this.fb.group({
@@ -40,7 +45,7 @@ export class CarFormComponent implements OnInit {
   }
 
   onLoad() {
-    this.store.dispatch(new LoadCars());
+    this.carService.getData();
   }
 
 }

@@ -1,6 +1,5 @@
 import { Car } from '../../models/car.model';
 import { CAR_ACTION, CarsAction} from '../actions/car.actions';
-import { CarService } from '../../services/car.service';
 
 const initialState = {
   cars: []
@@ -29,8 +28,10 @@ export function carsReducer(state = initialState, action: CarsAction) {
         }})]
       };
     case CAR_ACTION.LOAD_CARS:
-      //
-      return {};
+      return {
+        ...state,
+        cars: [...action.payload]
+      };
     default:
       return state;
   }

@@ -25,6 +25,7 @@ export class BuyCar implements Action {
 
 export class LoadCars implements Action {
   readonly type = CAR_ACTION.LOAD_CARS;
+  constructor( public payload: Car[]) {}
 }
 
 export type CarsAction = AddCar | DeleteCar | BuyCar | LoadCars;

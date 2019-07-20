@@ -8,6 +8,7 @@ import { CarFormComponent } from './car-form/car-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
 import { carsReducer } from './store/reducers/car.reducer';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { carsReducer } from './store/reducers/car.reducer';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    StoreModule.forRoot({carPage: carsReducer})
+    StoreModule.forRoot({carPage: carsReducer}),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
