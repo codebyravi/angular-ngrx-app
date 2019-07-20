@@ -1,11 +1,9 @@
 import { Car } from '../../models/car.model';
 import { CAR_ACTION, CarsAction} from '../actions/car.actions';
+import { CarService } from '../../services/car.service';
 
 const initialState = {
-  cars: [
-    new Car('Ford', 'Focus', '12.05.2017', false, 1),
-    new Car('Fiat', 'Fiesta', '13.05.2017', false, 2)
-  ]
+  cars: []
 };
 
 export function carsReducer(state = initialState, action: CarsAction) {
@@ -30,6 +28,9 @@ export function carsReducer(state = initialState, action: CarsAction) {
           };
         }})]
       };
+    case CAR_ACTION.LOAD_CARS:
+      //
+      return {};
     default:
       return state;
   }

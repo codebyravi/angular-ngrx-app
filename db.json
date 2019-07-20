@@ -1,0 +1,25 @@
+{
+  "cars": [
+    {
+      "name": "Toyota",
+      "model": "Corolla",
+      "date": "12.03.2019",
+      "isSold": false,
+      "id": 1
+    },
+    {
+      "name": "Ford",
+      "model": "Mustang",
+      "date": "15.05.2017",
+      "isSold": false,
+      "id": 2
+    },
+    {
+      "name": "Ford",
+      "model": "Fiesta",
+      "date": "13.07.2010",
+      "isSold": false,
+      "id": 3
+    }
+  ]
+}

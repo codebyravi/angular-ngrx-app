@@ -4,7 +4,7 @@ import * as moment from 'moment';
 import { Car } from '../models/car.model';
 import {Store} from '@ngrx/store';
 import {AppState} from '../store/state/app.state';
-import {AddCar} from '../store/actions/car.actions';
+import {AddCar, LoadCars} from '../store/actions/car.actions';
 
 @Component({
   selector: 'nx-car-form',
@@ -37,6 +37,10 @@ export class CarFormComponent implements OnInit {
      )));
      this.form.reset();
     }
+  }
+
+  onLoad() {
+    this.store.dispatch(new LoadCars());
   }
 
 }
