@@ -11,4 +11,8 @@ export class AppComponent {
     new Car('Ford', 'Focus', '12.05.2017', false, 1),
     new Car('Fiat', 'Fiesta', '13.05.2017', false, 2)
   ];
+
+  onAdd(car: Car): void {
+    this.cars.push(car);
+  }
 }
