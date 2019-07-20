@@ -3,7 +3,7 @@
     <div class="col">
       <nx-car-form></nx-car-form>
       <div class="list-group">
-        <nx-car *ngFor="let car of cars"></nx-car>
+        <nx-car [car]="car" *ngFor="let car of cars"></nx-car>
       </div>
     </div>
   </div>
