@@ -15,7 +15,6 @@ import {CarService} from '../services/car.service';
 
 export class CarFormComponent implements OnInit {
   form: FormGroup;
-  id = 2;
 
   constructor(
     private fb: FormBuilder,
@@ -32,14 +31,13 @@ export class CarFormComponent implements OnInit {
 
   onSubmit(): void {
     if (this.form.valid) {
-     this.id += 1;
-     this.store.dispatch(new AddCar(new Car(
+     const car = new Car(
        this.form.get('name').value,
        this.form.get('model').value,
        moment().format('DD.MM.YY'),
        false,
-       this.id
-     )));
+     );
+     this.carService.addData(car);
      this.form.reset();
     }
   }
