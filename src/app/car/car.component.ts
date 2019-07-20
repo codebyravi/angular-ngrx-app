@@ -3,6 +3,7 @@ import { Car } from '../models/car.model';
 import { Store } from '@ngrx/store';
 import { AppState } from '../store/state/app.state';
 import { BuyCar, DeleteCar } from '../store/actions/car.actions';
+import {CarService} from '../services/car.service';
 
 @Component({
   selector: 'nx-car',
@@ -13,14 +14,14 @@ import { BuyCar, DeleteCar } from '../store/actions/car.actions';
 export class CarComponent {
   @Input() car: Car;
 
-  constructor( private store: Store<AppState> ) { }
+  constructor( private store: Store<AppState>, private carService: CarService) { }
 
   onBuy(): void {
     this.store.dispatch(new BuyCar(this.car.id));
   }
 
   onDelete(): void {
-    this.store.dispatch(new DeleteCar(this.car.id));
+    this.carService.deleteData(this.car);
   }
 
 }

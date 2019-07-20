@@ -15,7 +15,7 @@ export class AddCar implements Action {
 
 export class DeleteCar implements Action {
   public readonly type = CAR_ACTION.DELETE_CAR;
-  constructor( public payload: number) {}
+  constructor( public payload: Car) {}
 }
 
 export class BuyCar implements Action {

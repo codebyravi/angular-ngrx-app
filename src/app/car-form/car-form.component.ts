@@ -2,10 +2,7 @@ import {Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import * as moment from 'moment';
 import { Car } from '../models/car.model';
-import {Store} from '@ngrx/store';
-import {AppState} from '../store/state/app.state';
-import {AddCar, LoadCars} from '../store/actions/car.actions';
-import {CarService} from '../services/car.service';
+import { CarService } from '../services/car.service';
 
 @Component({
   selector: 'nx-car-form',
@@ -18,7 +15,6 @@ export class CarFormComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private store: Store<AppState>,
     private carService: CarService
   ) { }
 

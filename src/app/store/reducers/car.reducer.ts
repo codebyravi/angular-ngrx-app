@@ -15,7 +15,7 @@ export function carsReducer(state = initialState, action: CarsAction) {
     case CAR_ACTION.DELETE_CAR:
       return {
         ...state,
-        cars: [...state.cars.filter((el: Car) => el.id !== action.payload)]
+        cars: [...state.cars.filter((el: Car) => el.id !== action.payload.id)]
       };
     case CAR_ACTION.BUY_CAR:
       return {
