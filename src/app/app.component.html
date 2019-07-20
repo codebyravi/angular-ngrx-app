@@ -1,9 +1,9 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <nx-car-form (addCar)="onAdd($event)"></nx-car-form>
+      <nx-car-form></nx-car-form>
       <div class="list-group">
-        <nx-car (deleteCar)="onDelete($event)" [car]="car" *ngFor="let car of cars"></nx-car>
+        <nx-car (deleteCar)="onDelete($event)" [car]="car" *ngFor="let car of (carState | async).cars"></nx-car>
       </div>
     </div>
   </div>
