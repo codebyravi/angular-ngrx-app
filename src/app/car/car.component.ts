@@ -1,9 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Car } from '../models/car.model';
-import { Store } from '@ngrx/store';
-import { AppState } from '../store/state/app.state';
-import { BuyCar, DeleteCar } from '../store/actions/car.actions';
-import {CarService} from '../services/car.service';
+import { CarService } from '../services/car.service';
 
 @Component({
   selector: 'nx-car',
@@ -14,10 +11,10 @@ import {CarService} from '../services/car.service';
 export class CarComponent {
   @Input() car: Car;
 
-  constructor( private store: Store<AppState>, private carService: CarService) { }
+  constructor(private carService: CarService) { }
 
   onBuy(): void {
-    this.store.dispatch(new BuyCar(this.car.id));
+    this.carService.updateData(this.car);
   }
 
   onDelete(): void {

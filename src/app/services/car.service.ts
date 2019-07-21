@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Store } from '@ngrx/store';
 import { AppState } from '../store/state/app.state';
 import { Car } from '../models/car.model';
-import {AddCar, DeleteCar, LoadCars} from '../store/actions/car.actions';
+import { AddCar, BuyCar, DeleteCar, LoadCars } from '../store/actions/car.actions';
 
 @Injectable({
   providedIn: 'root'
@@ -27,6 +27,11 @@ export class CarService {
   }
 
   deleteData(car: Car): void {
-    this.http.delete(`${CarService.BASE_URL}cars/${car.id}`).subscribe((data: Car) => this.store.dispatch(new DeleteCar(car)));
+    this.http.delete(`${CarService.BASE_URL}cars/${car.id}`).subscribe(() => this.store.dispatch(new DeleteCar(car)));
+  }
+
+  updateData(car: Car): void {
+    car.isSold = true;
+    this.http.put(`${CarService.BASE_URL}cars/${car.id}`, car).subscribe(() => this.store.dispatch(new BuyCar()));
   }
 }
