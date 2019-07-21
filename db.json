@@ -13,6 +13,13 @@
       "date": "20.07.19",
       "isSold": false,
       "id": 22
+    },
+    {
+      "name": "Ford",
+      "model": "Focus",
+      "date": "21.07.19",
+      "isSold": false,
+      "id": 23
     }
   ]
 }

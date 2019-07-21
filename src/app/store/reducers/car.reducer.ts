@@ -20,12 +20,6 @@ export function carsReducer(state = initialState, action: CarsAction) {
     case CAR_ACTION.BUY_CAR:
       return {
         ...state,
-        // cars: [...state.cars.map((el: Car) => {{
-        //   return {
-        //     ...el,
-        //     isSold: el.id === action.payload.id
-        //   };
-        // }})]
       };
     case CAR_ACTION.LOAD_CARS:
       return {
